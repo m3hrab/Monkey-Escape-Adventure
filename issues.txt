@@ -1,5 +1,5 @@
 1. (Not possible at the moment, Explain in details below) The first thing is the screen. It would be better if the user could maximize the window.(not possible at this moment)
-2. (Solved) The leopard only moves when the monkey does.
+2. (Solved) The leopard only moves when the monkey does. xd sorry for the miss understanding :p
 3. (Solved) If there is 2 leopards on screen and they meet and starts to go on the same route they are inside of eachother, so the user only sees 1 leopard
 4. (Solved) If the user lost all his lifes it would be better if on the pop up screen in the down middle would been a button X that if the user presses it navigates back to the main screen menu and not closing the game after 3 seconds
 5. (Solved) But the biggest issue that has to be fixed is that if i complete the level i cant press "Nie" "No" to go stop playing and going back to the main screen menu

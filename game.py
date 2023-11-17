@@ -422,9 +422,15 @@ class GameScreen():
         # update monkeys position
         self.monkey.update(self.map_data)
 
-
         tile_x = int(self.monkey.rect.x / self.settings.tile_size)
         tile_y = int(self.monkey.rect.y / self.settings.tile_size)
+
+        # Issue with the monkey's position
+        if self.map_data[tile_y][tile_x] == 1:
+            if self.map_data[tile_y+1][tile_x] != 1:
+                tile_y += 1
+            elif self.map_data[tile_y][tile_x+1] != 1:
+                tile_x += 1
 
         # Check if the monkey is on the banana
         if self.map_data[tile_y][tile_x] == 2:
@@ -476,17 +482,14 @@ class GameScreen():
                     self.map_data = self.load_map()
                     return 3
         
-        # Leopard should only move when the monkey is moving
-        if self.monkey.moving['right'] or self.monkey.moving['left'] or self.monkey.moving['up'] or self.monkey.moving['down']:
-            # update leopard position
-            leopard.update((tile_x, tile_y), self.map_data)
-
-            # if level more than 1
-            if leopard2 != None:
-                if leopard.rect.colliderect(leopard2.rect):
-                    pass 
-                else:
-                    leopard2.update((tile_x, tile_y), self.map_data)
+        print("%d, %d"%(tile_x, tile_y))
+        leopard.update((tile_x, tile_y), self.map_data)
+        # if level more than 1
+        if leopard2 != None:
+            if leopard.rect.colliderect(leopard2.rect):
+                pass 
+            else:
+                leopard2.update((tile_x, tile_y), self.map_data)
 
 
             
